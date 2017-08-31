@@ -3,22 +3,26 @@
     "port": 3000,
     "sendDelay":300,
     "defaultBrightness":32,
-    "spark_url":"https://api.spark.io/v1/devices",
+    "spark_url":"https://api.particle.io/v1/devices",
     "cores": [
         {
             "name": "Core1",
             "id": "PUT THE DEVICE ID HERE",
-            "description": "This is my Spark MCU."
+            "description": "This is my Spark MCU.",
+            "lightDisplay":true
         },
         {
             "name": "Core2",
             "id": "PUT THE DEVICE ID HERE",
-            "description": "This is my Spark MCU."
+            "description": "This is my Photon MCU.",
+            "lightDisplay":false
         }
     ],
     "screen":[{"name":"Core1", "vColStart":0, "vColEnd":31, "colStart":0, "colEnd":31},
               {"name":"Core2", "vColStart":32, "vColEnd":63, "colStart":0, "colEnd":31}],
     "water":{"valves":[{"valveId":"1", "name":"Front Yard", "core":"Photon1"},
                        {"valveId":"0", "name":"Garden","core":"Freddy"},
-                       {"valveId":"3", "name":"Side Yard", "core":"Photon1"}]}
+                       {"valveId":"3", "name":"Side Yard", "core":"Photon1"}]},
+    "chickens":{"switches":[{"lightId":"2", "name":"Heat Lamp", "core":"Robot"},
+                          {"lightId":"1", "name":"Daylight Lamp","core":"Robot"}]}
 }

@@ -87,9 +87,29 @@ exports.action = function(req, res) {
 	{
 		data = "usa,";
 	}
+	else if(action == "lightning")
+	{
+		data = "lightning,";
+	}
+	else if(action == "skull")
+	{
+		data = "skull,";
+	}
+	else if(action == "skullnolightning")
+	{
+		data = "skullnolightning,";
+	}
 	else if(action == "setBrightness")
 	{ //brightness: uint8_t 0-255
 		data = "setBrightness," + req.query.brightness;
+	}
+	else if(action == "on")
+	{ //brightness: uint8_t 0-255
+		data = "on," + req.query.pin;
+	}
+	else if(action == "off")
+	{ //brightness: uint8_t 0-255
+		data = "off," + req.query.pin;
 	}
 
 	util.runPost(data, action, coreId, res);

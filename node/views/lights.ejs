@@ -44,9 +44,10 @@
 
 		Core:
 		<select id="coreIdSelect" name="core">
-			<% for(var i=0; i<cores.length; i++) {%>
+			<% for(var i=0; i<cores.length; i++) {
+				if(cores[i].lightDisplay == true) {%>
 			   <option value="<%= cores[i].id %>"><%= cores[i].name %> - <%= cores[i].description %></option>
-			<% } %>
+			<% }} %>
 			<option value="all">All</option>
 		</select>
 
@@ -66,6 +67,9 @@
 				<option value="endrun">End Run</option>
 				<option value="snow">Snow</option>
 				<option value="usa">USA</option>
+				<option value="lightning">lightning</option>
+				<option value="skull">Skull</option>
+				<option value="skullnolightning">Skull - No lightning</option>
 			</select><br/>
 
 			<span id="colorSelector1">
@@ -450,7 +454,18 @@
 				$('#colorSelector2').hide();
 				$('#delayDiv').hide();
 			}
-
+			else if(ev.target.value == 'lightning')
+			{
+				$('#colorSelector1').hide();
+				$('#colorSelector2').hide();
+				$('#delayDiv').hide();
+			}
+			else if(ev.target.value == 'skull' || ev.target.value == 'skullnolightning')
+			{
+				$('#colorSelector1').hide();
+				$('#colorSelector2').hide();
+				$('#delayDiv').hide();
+			}
 		});
 
 		stopButton.addEventListener("click", function(ev) {
